@@ -11,14 +11,16 @@ El lado del cliente por su parte contará con 3 secciones en la web:
 2ª Tablero de notas con las tareas por hacer
 3ª Foro donde cualquier persona pueda escribir un mensaje para todas las personas conectadas.
 
+Como el proyecto del server ocupa un puerto en el localhost, he decidido que desde él puedas leer este mismo readme a diferencia de esta frase que estás leyendo en este documento.
 
 ## Instalación
 
 #### 1. Clonar el repositorio o descomprimir el zip del proyecto.
+```
+https://github.com/Danielbzg/synergy-connect-server
+```
 
-
-
-#### 2. Instalar las dependencias de node package manager
+#### 2. Instalar las dependencias de node package manager estando situado en la raíz del proyecto
 ```
 npm install
 ```
@@ -27,6 +29,8 @@ npm install
 ```
 docker-compose up -d   
 ```
+
+Puede que docker dé algún tipo de problema en el caso de que tengas ocupado el puerto 27017 con otra base de datos. Si es este el caso deberás cambiar el puerto en el archivo docker-compose.yaml
 
 #### 4. Levantar el servidor
 
