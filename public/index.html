@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <title>README - Synergy Connect</title>
+</head>
+<body>
+    <div align="center">
+        <a href="http://nestjs.com/" target="_blank">
+        <img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo">
+        </a>
+    </div>
+    <div class="description">
+    <h1>Descripción</h1>
+    <p>Este es el documento explicativo del proyecto "Synergy Connect". Este es un proyecto que nace con la idea de realizar una web que tenga una función de facilitar el trabajo de equipos y la comunicación entre los miembros.</p>
+    <p>En el backend contaremos con los servicios para utilizar las funciones propias de un CRUD de notas que se gestionarán con la base de datos de Mongo DB. También existirán las funciones para gestionar información acerca de los usuarios conectados.</p>
+    <p>El lado del cliente por su parte contará con 3 secciones en la web:</p>
+    <p>Información y explicación de la web, donde se podrán consultar las personas conectadas al dominio</p>
+    <p>Tablero de notas con las tareas por hacer</p>
+    <p>Foro donde cualquier persona pueda escribir un mensaje para todas las personas conectadas.</p>
+   
+    </div>
+
+<div class="instalation">
+  <h1>Instalación</h1>
+    <p>Clonar el repositorio o descomprimir el zip del proyecto.</p>
+    <p>Instalar las dependencias de node package manager</p>
+    <pde>npm install</code>
+    <p>Instalar Docker desktop y que esté ejecutándose.</p>
+    <p>Levantar el servicio de docker con el siguiente comando: <code>docker-compose up -d</code></p>
+    
+    <p>Levantar el servidor: <code>'npm run start:dev'</code></p>
+    
+  </div>
+
+  <h1>Endpoints disponibles</h1>
+
+  <h2>CRUD de Notas</h2>
+  <div class="orderNotes">
+    <div class="blocks">
+        <h3>Crear una Nota</h3>
+        <div>
+          <p><strong>Método:</strong> POST</p>
+          <p><strong>Ruta:</strong> /notas</p>
+          <p><strong>Descripción:</strong> Crea una nueva nota con los datos proporcionados.</p>
+          <p><strong>Parámetros:</strong>
+          <p><code>id</code> (string): Identificador único de la nota.</p>
+          <p><code>createCrudNoteDto</code> (object): Datos de la nota a crear.</p>      
+          </p>
+          <p><strong>Respuesta:</strong> Retorna la nota creada.</p>
+        </div>
+      </div>
+      
+      <div class="blocks">
+      <h3>Obtener Todas las Notas</h3>
+          <p><strong>Método:</strong> GET</p>
+          <p><strong>Ruta:</strong> /notas</p>
+          <p><strong>Descripción:</strong> Obtiene todas las notas existentes.</p>
+          <p><strong>Respuesta:</strong> Retorna un array con todas las notas.</p>
+      </div>
+      
+      <div class="blocks">
+          <h3>Obtener una Nota por ID</h3>
+          
+          <p><strong>Método:</strong> GET</p>
+          <p><strong>Ruta:</strong> /notas/:id</p>
+          <p><strong>Descripción:</strong> Obtiene una nota específica según su ID.</p>
+          <p><strong>Parámetros:</strong>
+              <ul>
+              <p><code>id</code> (string): Identificador único de la nota.</p>
+              </ul>
+          </p>
+          <p><strong>Respuesta:</strong> Retorna la nota encontrada o devuelve un error si no se encuentra.</p>
+      </div>
+      
+      <div class="blocks">
+          <h3>Actualizar una Nota</h3>
+          
+          <p><strong>Método:</strong> PUT</p>
+          <p><strong>Ruta:</strong> /notas/:id</p>
+          <p><strong>Descripción:</strong> Actualiza una nota existente según su ID.</p>
+          <p><strong>Parámetros:</strong></p>
+          <p><code>updateCrudNoteDto</code> (object): Datos actualizados de la nota.</p>
+          <p><strong>Respuesta:</strong> Retorna la nota actualizada.</p>
+          
+      </div>
+      
+      <div class="blocks">
+          <h3>Eliminar una Nota</h3>
+          
+            <p><strong>Método:</strong> DELETE</p>
+            <p><strong>Ruta:</strong> /notas/:id</p>
+            <p><strong>Descripción:</strong> Elimina una nota existente según su ID.</p>
+            <p><strong>Parámetros:</strong></p>
+            <p><code>id</code> (string): Identificador único de la nota a eliminar.</p>
+            <p><strong>Respuesta:</strong> Retorna un mensaje de éxito o un error si la nota no se encuentra.</p>
+          
+      </div>
+
+      
+  </div>
+
+  <h2>CRUD de Clientes Conectados</h2>
+<div class="orderNotes">
+    <div class="blocks">
+        <h3>Registrar Cliente</h3>
+        <div>
+            <p><strong>Método:</strong> POST</p>
+            <p><strong>Ruta:</strong> /clientes</p>
+            <p><strong>Descripción:</strong> Registra un nuevo cliente conectado.</p>
+            <p><strong>Parámetros:</strong></p>
+            <p><code>client</code> (Socket): Cliente a registrar.</p>
+            <p><strong>Respuesta:</strong> No aplica.</p>
+        </div>
+    </div>
+
+    <div class="blocks">
+        <h3>Eliminar Cliente</h3>
+        <div>
+            <p><strong>Método:</strong> DELETE</p>
+            <p><strong>Ruta:</strong> /clientes/:id</p>
+            <p><strong>Descripción:</strong> Elimina un cliente conectado según su ID.</p>
+            <p><strong>Parámetros:</strong></p>
+            <p><code>id</code> (string): Identificador único del cliente a eliminar.</p>
+            <p><strong>Respuesta:</strong> No aplica.</p>
+        </div>
+    </div>
+
+    <div class="blocks">
+        <h3>Obtener Cliente Conectado por ID</h3>
+        <div>
+            <p><strong>Método:</strong> GET</p>
+            <p><strong>Ruta:</strong> /clientes/:id</p>
+            <p><strong>Descripción:</strong> Obtiene un cliente conectado según su ID.</p>
+            <p><strong>Parámetros:</strong></p>
+            <p><code>id</code> (string): Identificador único del cliente a obtener.</p>
+            <p><strong>Respuesta:</strong> Retorna el cliente encontrado o null si no se encuentra.</p>
+        </div>
+    </div>
+
+    <div class="blocks">
+        <h3>Obtener Cantidad de Clientes Conectados</h3>
+        <div>
+            <p><strong>Método:</strong> GET</p>
+            <p><strong>Ruta:</strong> /clientes/count</p>
+            <p><strong>Descripción:</strong> Obtiene la cantidad de clientes conectados.</p>
+            <p><strong>Parámetros:</strong> No aplica.</p>
+            <p><strong>Respuesta:</strong> Retorna la cantidad de clientes conectados.</p>
+        </div>
+    </div>
+
+    <div class="blocks">
+        <h3>Obtener Clientes Conectados</h3>
+        <div>
+            <p><strong>Método:</strong> GET</p>
+            <p><strong>Ruta:</strong> /clientes</p>
+            <p><strong>Descripción:</strong> Obtiene los IDs de todos los clientes conectados.</p>
+            <p><strong>Parámetros:</strong> No aplica.</p>
+            <p><strong>Respuesta:</strong> Retorna un array con los IDs de los clientes conectados.</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+  <h1>Stack usado</h1>
+  <img src="https://img.shields.io/badge/-HTML5-%23E44D27?style=flat-square&logo=html5&logoColor=ffffff" alt="HTML5">
+  <img src="https://img.shields.io/badge/-CSS3-%231572B6?style=flat-square&logo=css3" alt="CSS3">
+  <img src="https://img.shields.io/badge/-Nodejs-339933?style=flat-square&logo=Node.js&logoColor=ffffff" alt="Node.js">
+  <img src="https://img.shields.io/badge/-Nest-000000?style=flat-square&logo=NestJS&logoColor=E0234E" alt="NestJS">
+  <img src="https://img.shields.io/badge/-Mongodb-563D7C?style=flat-square&logo=Mongodb" alt="MongoDB">
+  <img src="https://img.shields.io/badge/-Vue-181717?style=flat-square&logo=vue" alt="Vue.js">
+  <img src="https://img.shields.io/badge/-Git-%23F05032?style=flat-square&logo=git&logoColor=%23ffffff" alt="Git">
+  <img src="https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github" alt="GitHub">
+</body>
+</html>

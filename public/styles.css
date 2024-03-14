@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    padding: 10px;
+}
+
+h2{
+    color: cadetblue;
+}
+
+.orderNotes{
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 10px;
+}
+
+.blocks {
+    max-width: 350px;
+    background-color: rgb(164, 130, 196);
+    border: 2px;
+    border-color: black;
+    border-style: groove;
+    padding:10px;
+}
